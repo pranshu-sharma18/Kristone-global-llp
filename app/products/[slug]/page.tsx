@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   if (!product) return { title: "Product Not Found" };
 
   return {
-    title: `${product.name} — Premium ${product.categoryLabel} Exporter`,
+    title: product.name,
     description: `${product.description.slice(0, 155)}... Request samples and export quotes from Kristone Global LLP.`,
     openGraph: {
       title: product.name,
@@ -40,25 +40,29 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <section className="relative min-h-[70vh] pt-24">
+      <section className="relative h-[50vh] min-h-[320px] max-h-[560px] pt-24">
         <Image
           src={product.heroImage}
-          alt={`${product.name} — premium ${product.categoryLabel.toLowerCase()} slab for export`}
+          alt=""
           fill
           priority
           className="object-cover"
           sizes="100vw"
+          aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/20" />
-        <div className="relative z-10 flex min-h-[70vh] items-end section-padding container-wide pb-16">
-          <div className="max-w-3xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
+      </section>
+
+      <section className="section-padding pt-0">
+        <div className="container-wide -mt-16 relative z-10">
+          <div className="max-w-3xl border border-border bg-background/95 p-8 backdrop-blur-sm md:p-12">
             {product.flagship && (
               <span className="text-xs uppercase tracking-[0.3em] text-gold">Flagship Collection</span>
             )}
-            <p className="mt-2 text-xs uppercase tracking-widest text-stone-beige">
+            <p className="mt-2 text-xs uppercase tracking-widest text-muted">
               {product.categoryLabel}
             </p>
-            <h1 className="mt-3 font-display text-4xl text-foreground md:text-6xl">
+            <h1 className="mt-3 font-display text-4xl text-foreground md:text-5xl">
               {product.name}
             </h1>
             <p className="mt-4 text-lg italic text-stone-beige">{product.tagline}</p>
@@ -91,7 +95,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           <ProductGallery
             images={product.galleryImages.map((src, i) => ({
               src,
-              alt: `${product.name} slab view ${i + 1} — Kristone Global LLP`,
+              alt: `${product.name} — view ${i + 1}`,
             }))}
           />
         </div>

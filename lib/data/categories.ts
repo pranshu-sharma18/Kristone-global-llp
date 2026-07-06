@@ -5,7 +5,7 @@ export const categories: Category[] = [
     id: "quartzite",
     name: "Quartzite",
     description:
-      "Exceptionally durable metamorphic stone with rich veining and natural depth. Ideal for luxury interiors, facades, and high-traffic commercial spaces.",
+      "Exceptionally durable metamorphic stone with rich veining and natural depth. Our signature Artemis Grey Quartzite collection transforms luxury dining spaces, feature walls, and flooring for international projects.",
     applications: [
       "Luxury flooring",
       "Feature walls",
@@ -14,15 +14,20 @@ export const categories: Category[] = [
       "Exterior cladding",
     ],
     finishes: ["Polished", "Honed", "Leathered", "Brushed"],
-    image:
-      "https://images.unsplash.com/photo-1615873966236-02aec638b129?w=800&q=80",
-    alt: "Premium grey quartzite slab with natural veining",
+    image: "/images/categories/quartzite.png",
+    alt: "Luxury dining room with Artemis Grey Quartzite table, flooring, and feature wall — Kristone Global LLP",
+    galleryImages: [
+      "/images/categories/quartzite.png",
+      "/images/categories/quartzite-lifestyle-2.png",
+      "/images/categories/quartzite-living.png",
+      "/images/categories/quartzite-bedroom.png",
+    ],
   },
   {
     id: "marble",
     name: "Marble",
     description:
-      "Timeless elegance with distinctive veining patterns. The preferred choice for prestigious residential and hospitality projects worldwide.",
+      "Timeless elegance with distinctive veining patterns. Premium marble creates spa-like bathrooms, statement walls, and prestigious interiors for residential and hospitality projects worldwide.",
     applications: [
       "Bathroom suites",
       "Statement walls",
@@ -31,15 +36,14 @@ export const categories: Category[] = [
       "Luxury retail",
     ],
     finishes: ["Polished", "Honed", "Sandblasted"],
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-    alt: "White marble slab with elegant grey veining",
+    image: "/images/categories/marble.png",
+    alt: "Luxury bathroom with premium grey marble walls, flooring, and vanity — Kristone Global LLP",
   },
   {
     id: "granite",
     name: "Granite",
     description:
-      "Hard-wearing igneous stone offering superior strength and versatility for countertops, flooring, and architectural applications.",
+      "Hard-wearing igneous stone offering superior strength and dramatic character. Dark granite with copper and charcoal veining delivers bold architectural statements for countertops, flooring, and facades.",
     applications: [
       "Kitchen countertops",
       "Commercial flooring",
@@ -48,15 +52,14 @@ export const categories: Category[] = [
       "Outdoor paving",
     ],
     finishes: ["Polished", "Flamed", "Brushed", "Leathered"],
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    alt: "Dark granite stone surface texture",
+    image: "/images/categories/granite.png",
+    alt: "Modern interior with dark granite stone flooring and dramatic copper-veined feature wall",
   },
   {
     id: "onyx",
     name: "Onyx",
     description:
-      "Translucent and dramatic, onyx creates breathtaking backlit features and exclusive interior statements for premium environments.",
+      "Translucent and dramatic, onyx creates breathtaking backlit features and exclusive interior statements. Ideal for accent walls, reception areas, and premium hospitality environments.",
     applications: [
       "Backlit panels",
       "Bar fronts",
@@ -65,15 +68,14 @@ export const categories: Category[] = [
       "Reception desks",
     ],
     finishes: ["Polished", "Backlit-ready"],
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-    alt: "Translucent onyx stone with warm amber tones",
+    image: "/images/categories/onyx.png",
+    alt: "Luxury living room with dramatic backlit onyx-style stone feature wall and polished flooring",
   },
   {
     id: "engineered-stone",
     name: "Engineered Stone",
     description:
-      "Consistent performance with design flexibility. Engineered surfaces deliver uniform aesthetics for large-scale commercial specifications.",
+      "Consistent performance with design flexibility. Engineered surfaces deliver uniform aesthetics for kitchen islands, commercial countertops, and large-scale residential specifications.",
     applications: [
       "Commercial countertops",
       "Retail fit-outs",
@@ -82,9 +84,8 @@ export const categories: Category[] = [
       "Work surfaces",
     ],
     finishes: ["Polished", "Matte", "Textured"],
-    image:
-      "https://images.unsplash.com/photo-1600210492493-027691e750de?w=800&q=80",
-    alt: "Engineered stone countertop surface",
+    image: "/images/categories/engineered-stone.png",
+    alt: "Modern kitchen and dining space with engineered stone waterfall island and stone flooring",
   },
 ];
 

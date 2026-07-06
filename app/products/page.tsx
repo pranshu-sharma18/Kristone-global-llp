@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { categories } from "@/lib/data/categories";
 import { products, getFlagshipProducts } from "@/lib/data/products";
+import { StoneTypeBrowse } from "@/components/products/StoneTypeBrowse";
 
 export const metadata: Metadata = {
   title: "Stone Collections — Quartzite, Marble, Granite & Onyx",
@@ -31,8 +32,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         eyebrow="Collections"
         title="Premium Stone Collections"
         subtitle="Export-quality quartzite, marble, granite, onyx, and engineered stone for global specification."
-        image="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=80"
-        imageAlt="Premium stone collection slabs for export"
+        image="/images/categories/quartzite-lifestyle-2.png"
+        imageAlt="Premium quartzite stone walls and flooring in luxury dining interior"
       />
 
       <section className="section-padding bg-charcoal">
@@ -90,45 +91,10 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             ))}
           </div>
 
-          <div className="mt-12 grid gap-8">
-            {categories
-              .filter((cat) => !activeCategory || cat.id === activeCategory)
-              .map((cat) => (
-                <div key={cat.id} className="border border-border">
-                  <div className="grid lg:grid-cols-3">
-                    <div className="relative aspect-[4/3] lg:aspect-auto">
-                      <Image
-                        src={cat.image}
-                        alt={cat.alt}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-center p-8 lg:col-span-2">
-                      <h2 className="font-display text-3xl text-foreground">{cat.name}</h2>
-                      <div className="divider-gold mt-3" />
-                      <p className="mt-4 leading-relaxed text-muted">{cat.description}</p>
-                      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                        <div>
-                          <p className="text-xs uppercase tracking-widest text-gold">Applications</p>
-                          <p className="mt-1 text-sm text-muted">{cat.applications.join(" · ")}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs uppercase tracking-widest text-gold">Finishes</p>
-                          <p className="mt-1 text-sm text-muted">{cat.finishes.join(" · ")}</p>
-                        </div>
-                      </div>
-                      <div className="mt-8">
-                        <Button href={`/contact?product=${cat.name}`} variant="outline">
-                          Inquire About {cat.name}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
+          <StoneTypeBrowse
+            categories={categories}
+            activeCategory={activeCategory}
+          />
         </div>
       </section>
 

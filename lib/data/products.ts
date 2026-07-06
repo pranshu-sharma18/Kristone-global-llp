@@ -29,13 +29,12 @@ export const products: Product[] = [
       "Available in jumbo slab formats",
       "Consistent batch matching for large projects",
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1615873966236-02aec638b129?w=1600&q=80",
+    heroImage: "/images/categories/quartzite.png",
     galleryImages: [
-      "https://images.unsplash.com/photo-1615873966236-02aec638b129?w=800&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "/images/categories/quartzite.png",
+      "/images/categories/quartzite-lifestyle-2.png",
+      "/images/categories/quartzite-living.png",
+      "/images/categories/quartzite-bedroom.png",
     ],
     featured: true,
     flagship: true,

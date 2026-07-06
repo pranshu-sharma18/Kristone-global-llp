@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { categories } from "@/lib/data/categories";
+import { featuredSlabs } from "@/lib/data/featuredSlabs";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function CategoryHighlights() {
@@ -10,36 +10,46 @@ export function CategoryHighlights() {
         <SectionHeading
           eyebrow="Our Collections"
           title="Premium Stone Categories"
-          description="From signature quartzite to classic marble and granite — curated for international specification and luxury application."
+          description="Export-grade natural stone slabs — breccia, marble, and quartzite selections curated for international luxury projects."
           align="center"
         />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {categories.map((cat, i) => (
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {featuredSlabs.map((slab, i) => (
             <Link
-              key={cat.id}
-              href={`/products?category=${cat.id}`}
+              key={slab.id}
+              href={`/contact?product=${encodeURIComponent(slab.name)}`}
               className="group relative overflow-hidden border border-border bg-background transition-all duration-500 hover:border-gold/40"
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-light">
                 <Image
-                  src={cat.image}
-                  alt={cat.alt}
+                  src={slab.image}
+                  alt={slab.alt}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 20vw"
+                  className="object-contain p-2 transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="font-display text-xl text-foreground">{cat.name}</h3>
-                <p className="mt-1 text-xs text-gold opacity-0 transition-opacity group-hover:opacity-100">
-                  View Collection →
+                <p className="text-[10px] uppercase tracking-widest text-gold">{slab.category}</p>
+                <h3 className="mt-1 font-display text-lg text-foreground md:text-xl">{slab.name}</h3>
+                <p className="mt-1 text-xs text-muted opacity-0 transition-opacity group-hover:opacity-100">
+                  Request Quote →
                 </p>
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/products"
+            className="inline-block border border-gold/60 px-8 py-3 text-xs uppercase tracking-widest text-gold transition-all hover:bg-gold hover:text-charcoal"
+          >
+            View All Collections
+          </Link>
         </div>
       </div>
     </section>

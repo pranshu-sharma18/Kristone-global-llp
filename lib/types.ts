@@ -31,6 +31,7 @@ export interface Category {
   finishes: string[];
   image: string;
   alt: string;
+  galleryImages?: string[];
 }
 
 export interface Project {

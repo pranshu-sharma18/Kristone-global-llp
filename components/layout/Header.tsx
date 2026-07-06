@@ -30,16 +30,7 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-wide flex items-center justify-between px-6 py-4 md:px-10 lg:px-16">
-        <Link href="/" className="group flex flex-col" onClick={() => setMenuOpen(false)}>
-          <span className="font-display text-xl tracking-wide text-foreground md:text-2xl">
-            Kristone
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.3em] text-gold">
-            Global LLP
-          </span>
-        </Link>
-
+      <div className="container-wide flex items-center justify-end gap-8 px-6 py-4 md:px-10 lg:justify-between lg:px-16">
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
           {mainNav.map((item) => (
             <Link

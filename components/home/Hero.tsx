@@ -1,20 +1,88 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { company } from "@/lib/data/company";
+
+const heroSlabs = [
+  {
+    src: "/images/hero/valerian-breccia.png",
+    alt: "Valerian Breccia slab by Kristone Global LLP",
+  },
+  {
+    src: "/images/hero/rossa-levanto.png",
+    alt: "Rossa Levanto slab by Kristone Global LLP",
+  },
+  {
+    src: "/images/hero/antique-grey-gold.png",
+    alt: "Antique Grey & Gold slab by Kristone Global LLP",
+  },
+  {
+    src: "/images/hero/breccia-fantasy.png",
+    alt: "Breccia Fantasy slab by Kristone Global LLP",
+  },
+  {
+    src: "/images/hero/golden-harvest-grey.png",
+    alt: "Golden Harvest Grey slab by Kristone Global LLP",
+  },
+  {
+    src: "/images/hero/silver-veins-grey.png",
+    alt: "Silver Veins Grey slab by Kristone Global LLP",
+  },
+  {
+    src: "/images/hero/copper-vein-grey.png",
+    alt: "Copper Vein Grey slab by Kristone Global LLP",
+  },
+];
 
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <Image
-        src="https://images.unsplash.com/photo-1615873966236-02aec638b129?w=1920&q=80"
-        alt="Premium grey quartzite slab — Kristone Global LLP natural stone exporter"
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+      <div className="absolute inset-0 bg-[#080808]">
+        <div className="absolute inset-y-0 -left-[15%] flex w-[220%] -rotate-6 items-center opacity-90">
+          <div className="flex min-w-max gap-6 animate-marquee-left">
+            {[...heroSlabs, ...heroSlabs].map((slab, index) => (
+              <div
+                key={`${slab.src}-top-${index}`}
+                className="relative h-[220px] w-[320px] shrink-0 overflow-hidden rounded-sm border border-white/25 bg-charcoal-light shadow-2xl shadow-black/40 md:h-[280px] md:w-[420px] lg:h-[320px] lg:w-[480px]"
+              >
+                <Image
+                  src={slab.src}
+                  alt={slab.alt}
+                  fill
+                  priority={index < heroSlabs.length}
+                  className="object-cover brightness-110 contrast-105"
+                  sizes="(max-width: 768px) 320px, (max-width: 1200px) 420px, 480px"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute inset-y-0 -left-[10%] flex w-[220%] rotate-3 items-center opacity-80">
+          <div className="flex min-w-max gap-6 animate-marquee-right pt-56 md:pt-64 lg:pt-72">
+            {[...heroSlabs.slice(2), ...heroSlabs.slice(0, 2), ...heroSlabs].map(
+              (slab, index) => (
+                <div
+                  key={`${slab.src}-bottom-${index}`}
+                  className="relative h-[200px] w-[300px] shrink-0 overflow-hidden rounded-sm border border-white/20 bg-charcoal-light shadow-2xl shadow-black/30 md:h-[240px] md:w-[380px] lg:h-[280px] lg:w-[440px]"
+                >
+                  <Image
+                    src={slab.src}
+                    alt=""
+                    fill
+                    aria-hidden
+                    className="object-cover brightness-110 contrast-105"
+                    sizes="(max-width: 768px) 300px, (max-width: 1200px) 380px, 440px"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/55 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/25 to-transparent" />
+      <div className="absolute inset-0 bg-black/15" />
 
       <div className="relative z-10 container-wide px-6 pt-32 pb-20 md:px-10 lg:px-16">
         <div className="max-w-3xl">
@@ -40,21 +108,6 @@ export function Hero() {
               Contact Sales
             </Button>
           </div>
-        </div>
-
-        <div className="animate-fade-in animate-delay-400 mt-20 hidden items-end justify-between border-t border-border/50 pt-8 md:flex">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-muted">Flagship Collection</p>
-            <Link
-              href="/products/artemis-grey-quartzite"
-              className="mt-1 font-display text-xl text-gold transition-colors hover:text-gold-light"
-            >
-              Artemis Grey Quartzite →
-            </Link>
-          </div>
-          <p className="max-w-xs text-right text-sm text-muted">
-            Trusted natural stone exporter · Quartzite · Marble · Granite · Onyx
-          </p>
         </div>
       </div>
 
