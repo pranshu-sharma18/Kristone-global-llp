@@ -19,7 +19,7 @@ export function ProjectGalleryPreview() {
           <SectionHeading
             eyebrow="Project Gallery"
             title="Stone in Application"
-            description="Premium export slabs selected for luxury flooring, cladding, and architectural specification."
+            description="See how Kristone Global stone transforms luxury living spaces, kitchens, and hospitality environments."
           />
           <Button href="/projects" variant="outline" className="shrink-0">
             View All Projects
@@ -34,12 +34,12 @@ export function ProjectGalleryPreview() {
               onClick={() => setLightboxIndex(i)}
               className="group relative overflow-hidden border border-border bg-charcoal-light text-left transition-all hover:border-gold/40"
             >
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={slab.image}
                   alt={slab.alt}
                   fill
-                  className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
