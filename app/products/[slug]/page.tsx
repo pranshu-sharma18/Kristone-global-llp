@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { products, getProductBySlug, getRelatedProducts } from "@/lib/data/products";
-import { ProductGallery } from "@/components/products/ProductGallery";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -80,24 +79,82 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       </section>
 
       <section className="section-padding">
-        <div className="container-wide grid gap-16 lg:grid-cols-2">
-          <div>
-            <SectionHeading eyebrow="Overview" title="Product Details" />
-            <p className="mt-6 leading-relaxed text-muted">{product.description}</p>
-
-            <div className="mt-10 space-y-6">
-              <DetailBlock title="Color & Pattern" content={product.colorPattern} />
-              <DetailBlock title="Finish Options" content={product.finishes.join(" · ")} />
-              <DetailBlock title="Thickness Options" content={product.thickness.join(" · ")} />
-            </div>
+        <div className="container-wide">
+          <div className="max-w-3xl">
+            <SectionHeading
+              eyebrow="Overview"
+              title="Product Details"
+              description="Each slab view is paired with the product details on the right for a cleaner, aligned presentation."
+            />
           </div>
 
-          <ProductGallery
-            images={product.galleryImages.map((src, i) => ({
-              src,
-              alt: `${product.name} — view ${i + 1}`,
-            }))}
-          />
+          <div className="mt-12 space-y-10">
+            {product.galleryImages.map((src, i) => {
+              const imageOnRight = i % 2 === 1;
+
+              return (
+              <article
+                key={src}
+                className="grid items-stretch gap-0 overflow-hidden border border-border bg-charcoal-light lg:grid-cols-2"
+              >
+                <div
+                  className={`relative min-h-[280px] bg-background sm:min-h-[360px] ${
+                    imageOnRight ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt={`${product.name} — view ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+
+                <div
+                  className={`flex flex-col justify-between p-8 md:p-10 ${
+                    imageOnRight ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.25em] text-gold">
+                      Slab View {i + 1}
+                    </p>
+                    <p className="mt-3 text-xs uppercase tracking-widest text-muted">
+                      {product.flagship ? "Flagship Collection" : product.categoryLabel}
+                    </p>
+                    <h2 className="mt-3 font-display text-3xl text-foreground">
+                      {product.name}
+                    </h2>
+                    <p className="mt-4 text-base italic text-stone-beige">
+                      {product.tagline}
+                    </p>
+                    <p className="mt-6 leading-relaxed text-muted">
+                      {product.description}
+                    </p>
+
+                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                      <DetailBlock title="Color & Pattern" content={product.colorPattern} />
+                      <DetailBlock title="Finish Options" content={product.finishes.join(" · ")} />
+                      <DetailBlock title="Thickness Options" content={product.thickness.join(" · ")} />
+                      <DetailBlock
+                        title="Best Applications"
+                        content={product.applications.slice(0, 3).join(" · ")}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <Button href="/contact#inquiry">Request Quote</Button>
+                    <Button href="/contact?type=sample" variant="outline">
+                      Request Sample
+                    </Button>
+                  </div>
+                </div>
+              </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -183,7 +240,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
 function DetailBlock({ title, content }: { title: string; content: string }) {
   return (
-    <div>
+    <div className="border border-border bg-background px-5 py-4">
       <h3 className="text-xs uppercase tracking-widest text-gold">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{content}</p>
     </div>
