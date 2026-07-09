@@ -9,7 +9,7 @@ export const company = {
   whatsapp: "+919876543210",
   address: {
     line1: "Industrial Estate, Stone Park",
-    line2: "Rajasthan, India — 302012",
+    line2: "Dewas, Madhya Pradesh, India",
   },
   social: {
     linkedin: "https://linkedin.com/company/kristone-global",

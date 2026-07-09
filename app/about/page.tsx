@@ -32,31 +32,61 @@ export default function AboutPage() {
             <div className="mt-8 space-y-4 text-muted leading-relaxed">
               <p>
                 Kristone Global LLP was founded with a singular vision: to establish
-                India&apos;s finest natural stone on the global stage. From our
-                operations in Rajasthan — the heart of India&apos;s stone industry —
-                we have built a reputation for export-grade quality, reliable supply,
-                and premium collections that meet international specification.
+                India&apos;s finest natural stone on the global stage. From our base in
+                Dewas, Madhya Pradesh, we have built a reputation for export-grade
+                quality, reliable supply, and premium collections that meet
+                international specification.
               </p>
               <p>
                 Our signature Artemis quartzite range has become the cornerstone of
-                our export portfolio, trusted by architects and developers for luxury
-                villas, five-star hotels, and landmark commercial projects worldwide.
+                our export portfolio, trusted by architects, contractors, importers,
+                and developers for luxury villas, hospitality spaces, premium
+                residences, and landmark commercial projects. We focus on stones that
+                combine visual distinction with dependable performance, helping our
+                clients specify materials that elevate both design and long-term value.
+              </p>
+              <p>
+                Over time, we have strengthened our international presence through
+                active collaboration with buyers, partners, and project teams in
+                China, Dubai, and 5+ countries across key global markets. These
+                relationships have helped us understand the expectations of
+                international trade, from product consistency and presentation to
+                documentation, logistics, and timely delivery.
               </p>
               <p>
                 Today, Kristone Global serves importers, distributors, project
                 suppliers, and specification teams across the Middle East, Europe,
-                North America, Asia Pacific, and Africa.
+                North America, Asia Pacific, and Africa. Our approach is simple:
+                select better stone, maintain higher quality standards, communicate
+                transparently, and build long-term business relationships that grow
+                with every successful shipment.
+              </p>
+              <p>
+                As we continue to expand, our ambition remains clear: to represent
+                Indian natural stone with professionalism, trust, and a premium
+                global identity rooted in quality, consistency, and service.
               </p>
             </div>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
-              alt="Premium marble and stone selection at Kristone Global LLP"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+          <div className="space-y-4">
+            <div className="relative min-h-[320px] overflow-hidden bg-charcoal-light sm:min-h-[420px]">
+              <Image
+                src="/images/about-story-founder-1.png"
+                alt="Kristone Global team member at an international business event"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative min-h-[320px] overflow-hidden bg-charcoal-light sm:min-h-[420px]">
+              <Image
+                src="/images/about-story-founder-2.png"
+                alt="Kristone Global representative at a global trade event"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
