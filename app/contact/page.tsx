@@ -86,6 +86,39 @@ export default function ContactPage() {
                   Download PDF
                 </Button>
               </div>
+              <div className="overflow-hidden border border-border bg-background">
+                <div className="grid gap-0 sm:grid-cols-[180px_1fr]">
+                  <div className="relative min-h-[220px] bg-charcoal-light">
+                    <img
+                      src="/images/hr-monika-sharma.png"
+                      alt="Er. Monika Sharma, HR at Kristone Global LLP"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xs uppercase tracking-widest text-gold">HR Contact</h3>
+                    <h4 className="mt-3 font-display text-2xl text-foreground">
+                      Er. Monika Sharma
+                    </h4>
+                    <p className="mt-2 text-sm text-stone-beige">Human Resources</p>
+                    <p className="mt-4 text-sm leading-relaxed text-muted">
+                      Er. Monika Sharma supports communication and coordination at
+                      Kristone Global LLP, helping ensure smooth interaction for
+                      business inquiries, company coordination, and client-facing
+                      support. She represents the company with professionalism,
+                      responsiveness, and a people-first approach.
+                    </p>
+                    <div className="mt-5">
+                      <a
+                        href="tel:8770076052"
+                        className="text-sm font-medium text-foreground transition-colors hover:text-gold"
+                      >
+                        Contact: 8770076052
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <InquiryForm id="contact-inquiry" title="Buyer Inquiry Form" />
