@@ -18,7 +18,7 @@ export default function AboutPage() {
         eyebrow="About Kristone Global"
         title="Crafted for Luxury. Built for the World."
         subtitle="A premium natural stone exporter dedicated to connecting global buyers with exceptional stone collections."
-        image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
+        image="/images/about-hero-quarry.png"
         imageAlt="Natural stone quarry — Kristone Global LLP sourcing"
       />
 

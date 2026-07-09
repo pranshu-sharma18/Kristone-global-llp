@@ -2,94 +2,56 @@ import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
-    slug: "luxury-villa-dubai",
-    title: "Luxury Villa — Dubai",
-    category: "Luxury Villas",
+    slug: "signature-kitchen-island",
+    title: "Signature Kitchen Island",
+    category: "Kitchen Applications",
     description:
-      "Artemis Grey Quartzite flooring and feature walls in a premium residential villa development.",
-    image:
-      "https://images.unsplash.com/photo-1616486338822-3d67e38f53f1?w=800&q=80",
-    alt: "Luxury villa interior with premium stone flooring",
+      "A refined kitchen concept featuring dramatic grey quartzite across the island, backsplash, and work surfaces for a seamless high-end finish.",
+    image: "/images/projects/kitchen-application.png",
+    alt: "Luxury kitchen interior with grey quartzite island and backsplash",
   },
   {
-    slug: "five-star-hotel-lobby",
-    title: "Five-Star Hotel Lobby",
-    category: "Hotels",
+    slug: "spa-bathroom-vanity-suite",
+    title: "Spa Bathroom Vanity Suite",
+    category: "Bathroom Applications",
     description:
-      "Full-height wall cladding and reception desk in Artemis Smoke Quartzite for an international hotel brand.",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
-    alt: "Five-star hotel lobby with stone wall cladding",
+      "Warm-toned natural stone creates a luxurious hospitality-style bathroom with book-matched wall panels, vanity surfaces, and ambient lighting.",
+    image: "/images/projects/bathroom-application.png",
+    alt: "Premium bathroom vanity space finished in rich natural stone",
   },
   {
-    slug: "commercial-office-interior",
-    title: "Commercial Office Interior",
-    category: "Commercial Interiors",
+    slug: "hotel-reception-counter",
+    title: "Hotel Reception Counter",
+    category: "Hospitality Interiors",
     description:
-      "Engineered stone and granite surfaces across a corporate headquarters fit-out.",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    alt: "Modern commercial office with stone surfaces",
+      "A bold reception concept designed to make a premium first impression with deep burgundy stone tones across the front desk and lobby focal areas.",
+    image: "/images/projects/hotel-reception-application.png",
+    alt: "Luxury hotel reception desk finished in burgundy natural stone",
   },
   {
-    slug: "premium-flooring-project",
-    title: "Premium Flooring Installation",
-    category: "Flooring",
+    slug: "luxury-corridor-flooring",
+    title: "Luxury Corridor Flooring",
+    category: "Flooring Solutions",
     description:
-      "Large-format quartzite slabs installed across a luxury retail flagship store.",
-    image:
-      "https://images.unsplash.com/photo-1600210492493-027691e750de?w=800&q=80",
-    alt: "Premium stone flooring in luxury retail space",
+      "Elegant polished flooring with soft veining, specified for upscale residential and hospitality corridors where brightness and scale matter.",
+    image: "/images/projects/flooring-application.png",
+    alt: "Elegant corridor with polished white natural stone flooring",
   },
   {
-    slug: "wall-cladding-facade",
-    title: "Exterior Wall Cladding",
-    category: "Wall Cladding",
+    slug: "fireplace-feature-wall",
+    title: "Fireplace Feature Wall",
+    category: "Feature Installations",
     description:
-      "Weather-resistant quartzite facade panels for a contemporary residential tower.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-    alt: "Modern building facade with stone cladding",
-  },
-  {
-    slug: "kitchen-countertops",
-    title: "Kitchen Countertops",
-    category: "Countertops",
-    description:
-      "Granite and quartzite countertops for a multi-unit luxury residential development.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    alt: "Premium stone kitchen countertops",
-  },
-  {
-    slug: "architectural-facade",
-    title: "Architectural Facade",
-    category: "Facades",
-    description:
-      "Artemis Canyon Quartzite applied to a landmark commercial building exterior.",
-    image:
-      "https://images.unsplash.com/photo-1511818966892-7c671f390128?w=800&q=80",
-    alt: "Architectural stone facade on commercial building",
-  },
-  {
-    slug: "grand-staircase",
-    title: "Grand Staircase",
-    category: "Staircases",
-    description:
-      "Polished marble and quartzite treads for a luxury hotel atrium staircase.",
-    image:
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80",
-    alt: "Grand staircase with polished stone treads",
+      "A statement fireplace surround that transforms a classic lounge into a rich, luxurious interior anchored by natural movement and depth.",
+    image: "/images/projects/fireplace-application.png",
+    alt: "Classic lounge with dramatic marble fireplace feature wall",
   },
 ];
 
 export const applicationCategories = [
-  "Luxury Villas",
-  "Hotels",
-  "Commercial Interiors",
-  "Flooring",
-  "Wall Cladding",
-  "Countertops",
-  "Facades",
-  "Staircases",
+  "Kitchen Applications",
+  "Bathroom Applications",
+  "Hospitality Interiors",
+  "Flooring Solutions",
+  "Feature Installations",
 ] as const;

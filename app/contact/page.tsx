@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const primaryPhone = company.phone.split(",")[0]?.trim() ?? company.phone;
   const whatsappMessage = encodeURIComponent(
     "Hello Kristone Global LLP, I would like to inquire about your premium natural stone collections."
   );
@@ -39,7 +40,7 @@ export default function ContactPage() {
             <ContactCard
               title="Phone"
               value={company.phone}
-              href={`tel:${company.phone.replace(/\s/g, "")}`}
+              href={`tel:${primaryPhone.replace(/\D/g, "")}`}
               icon="phone"
             />
             <ContactCard

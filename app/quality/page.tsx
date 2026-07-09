@@ -18,7 +18,7 @@ export default function QualityPage() {
         eyebrow="Quality & Process"
         title="Excellence at Every Stage"
         subtitle="From quarry to container — our rigorous process ensures export-grade natural stone for global buyers."
-        image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
+        image="/images/quality-hero-stone.png"
         imageAlt="Stone processing and quality inspection at Kristone Global LLP"
       />
 
