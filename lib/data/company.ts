@@ -8,8 +8,8 @@ export const company = {
   phone: "9039051255, 8770076052",
   whatsapp: "9039051255",
   address: {
-    line1: "Industrial Estate, Stone Park",
-    line2: "Dewas, Madhya Pradesh, India",
+    line1: "PLOT NO. 1B/3B & 1B/4",
+    line2: "INDUSTRIAL AREA NO. 1 A.B. ROAD, DEWAS (M.P.)",
   },
   social: {
     linkedin: "https://linkedin.com/company/kristone-global",

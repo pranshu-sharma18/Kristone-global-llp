@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 export function FeaturedProduct() {
   const product = getProductBySlug("artemis-grey-quartzite");
   if (!product) return null;
+  const featuredImage = "/images/home-artemis-grey-featured.png";
 
   return (
     <section className="section-padding">
@@ -13,7 +14,7 @@ export function FeaturedProduct() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
-              src={product.heroImage}
+              src={featuredImage}
               alt={`${product.name} — premium quartzite slab by Kristone Global LLP`}
               fill
               className="object-cover"
