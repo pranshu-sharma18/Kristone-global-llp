@@ -29,7 +29,7 @@ export const products: Product[] = [
       "Available in jumbo slab formats",
       "Consistent batch matching for large projects",
     ],
-    heroImage: "/images/slabs/artemis-grey-gallery-1.png",
+    heroImage: "/images/slabs/artemis-grey-quartzite.png",
     galleryImages: [
       "/images/slabs/artemis-grey-gallery-1.png",
       "/images/slabs/artemis-grey-gallery-2.png",
