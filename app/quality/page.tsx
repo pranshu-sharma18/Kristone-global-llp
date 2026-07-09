@@ -60,8 +60,8 @@ export default function QualityPage() {
         <div className="container-wide grid gap-12 lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[400px]">
             <Image
-              src="https://images.unsplash.com/photo-1615873966236-02aec638b129?w=800&q=80"
-              alt="Export-quality stone slab inspection at Kristone Global LLP"
+              src="/images/quality-standards-inspection.png"
+              alt="Quality standards inspection process for premium stone slabs at Kristone Global LLP"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
