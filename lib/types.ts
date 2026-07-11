@@ -23,6 +23,13 @@ export interface Product {
   flagship?: boolean;
 }
 
+export interface CategoryGalleryItem {
+  src: string;
+  title: string;
+  description: string;
+  origin?: string;
+}
+
 export interface Category {
   id: StoneCategory;
   name: string;
@@ -32,6 +39,7 @@ export interface Category {
   image: string;
   alt: string;
   galleryImages?: string[];
+  galleryItems?: CategoryGalleryItem[];
 }
 
 export interface Project {
