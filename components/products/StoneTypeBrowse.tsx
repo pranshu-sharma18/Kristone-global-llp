@@ -22,11 +22,23 @@ function getGalleryItems(cat: Category): CategoryGalleryItem[] {
   }));
 }
 
-function CategoryBlock({ cat }: { cat: Category }) {
+function CategoryBlock({
+  cat,
+  showGallery,
+}: {
+  cat: Category;
+  showGallery: boolean;
+}) {
   const items = getGalleryItems(cat);
   const hasGallery = items.length > 1;
   const [activeIndex, setActiveIndex] = useState(0);
   const active = items[activeIndex] ?? items[0];
+
+  const displayImage = showGallery && hasGallery ? active.src : cat.image;
+  const displayTitle = showGallery && hasGallery ? active.title : cat.name;
+  const displayDescription =
+    showGallery && hasGallery ? active.description : cat.description;
+  const displayOrigin = showGallery && hasGallery ? active.origin : undefined;
 
   return (
     <article className="border border-border bg-charcoal-light/30 transition-colors hover:border-gold/25">
@@ -34,9 +46,9 @@ function CategoryBlock({ cat }: { cat: Category }) {
         <div className="relative lg:col-span-2">
           <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[420px]">
             <Image
-              key={active.src}
-              src={active.src}
-              alt={`${active.title} — Kristone Global LLP`}
+              key={displayImage}
+              src={displayImage}
+              alt={`${displayTitle} — Kristone Global LLP`}
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -53,16 +65,16 @@ function CategoryBlock({ cat }: { cat: Category }) {
             </span>
           </Link>
           <h2 className="mt-3 font-display text-3xl text-foreground md:text-4xl">
-            {hasGallery ? active.title : cat.name}
+            {displayTitle}
           </h2>
           <div className="divider-gold mt-4" />
-          {hasGallery && active.origin && (
+          {displayOrigin && (
             <p className="mt-3 text-xs uppercase tracking-widest text-stone-beige">
-              Origin · {active.origin}
+              Origin · {displayOrigin}
             </p>
           )}
           <p className="mt-5 max-w-2xl leading-relaxed text-muted">
-            {hasGallery ? active.description : cat.description}
+            {displayDescription}
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -94,14 +106,17 @@ function CategoryBlock({ cat }: { cat: Category }) {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href={`/products?category=${cat.id}`}>View {cat.name}</Button>
-            <Button href={`/contact?product=${encodeURIComponent(active.title)}`} variant="outline">
-              Inquire About {hasGallery ? active.title : cat.name}
+            <Button
+              href={`/contact?product=${encodeURIComponent(displayTitle)}`}
+              variant="outline"
+            >
+              Inquire About {displayTitle}
             </Button>
           </div>
         </div>
       </div>
 
-      {hasGallery && (
+      {showGallery && hasGallery && (
         <div className="border-t border-border p-4 md:p-6">
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-gold">
             {cat.name} Collection · Click a slab to view details
@@ -156,11 +171,12 @@ export function StoneTypeBrowse({ categories, activeCategory }: StoneTypeBrowseP
   const visible = categories.filter(
     (cat) => !activeCategory || cat.id === activeCategory
   );
+  const showGallery = Boolean(activeCategory);
 
   return (
     <div className="mt-12 space-y-10">
       {visible.map((cat) => (
-        <CategoryBlock key={cat.id} cat={cat} />
+        <CategoryBlock key={cat.id} cat={cat} showGallery={showGallery} />
       ))}
     </div>
   );
