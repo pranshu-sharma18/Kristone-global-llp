@@ -16,13 +16,47 @@ export function InquiryForm({
 }: InquiryFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setLoading(false);
-    setSubmitted(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          company: formData.get("company"),
+          country: formData.get("country"),
+          email: formData.get("email"),
+          product: formData.get("product"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to submit inquiry.");
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Failed to submit inquiry. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -35,7 +69,8 @@ export function InquiryForm({
         </div>
         <h3 className="font-display text-2xl text-foreground">Thank You</h3>
         <p className="mt-2 text-muted">
-          Your inquiry has been received. Our export team will respond within 24 hours.
+          Your inquiry has been received. Our export team will respond within 24 hours at{" "}
+          {company.email}.
         </p>
       </div>
     );
@@ -70,6 +105,11 @@ export function InquiryForm({
           className="w-full resize-none border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-gold/50 focus:outline-none"
         />
       </div>
+      {error && (
+        <p className="border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+          {error}
+        </p>
+      )}
       <button
         type="submit"
         disabled={loading}
@@ -79,6 +119,7 @@ export function InquiryForm({
       </button>
       <p className="text-xs text-muted">
         By submitting, you agree to be contacted by {company.name} regarding your inquiry.
+        Inquiries are sent to {company.email}.
       </p>
     </form>
   );
