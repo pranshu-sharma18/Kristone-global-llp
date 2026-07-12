@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
+import { loadEnvConfig } from "@next/env";
 import nodemailer from "nodemailer";
 import { company } from "@/lib/data/company";
+
+// Ensure .env.local is loaded for this route (needed if server started before keys were added)
+loadEnvConfig(process.cwd());
 
 export async function POST(request: Request) {
   try {
@@ -19,15 +23,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const to = process.env.INQUIRY_TO_EMAIL || company.email;
+    const user = process.env.SMTP_USER?.trim();
+    const pass = process.env.SMTP_PASS?.trim();
+    const to = process.env.INQUIRY_TO_EMAIL?.trim() || company.email;
 
     if (!user || !pass) {
       return NextResponse.json(
         {
           error:
-            "Email is not configured. Add SMTP_USER and SMTP_PASS in .env.local.",
+            "Email is not configured. Add SMTP_USER and SMTP_PASS in .env.local, then restart npm run dev.",
         },
         { status: 500 }
       );
