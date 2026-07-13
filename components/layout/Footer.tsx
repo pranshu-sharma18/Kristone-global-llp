@@ -56,8 +56,15 @@ export function Footer() {
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} {company.name}. All rights reserved.
           </p>
-          <p className="text-xs text-muted">
+          <p className="text-center text-xs text-muted md:text-right">
             Natural Stone Exporter · Quartzite · Marble · Granite · Global Supplier
+          </p>
+        </div>
+
+        <div className="mt-6 border-t border-border/60 pt-6 text-center">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-muted/80">
+            Website created &amp; tested by{" "}
+            <span className="text-gold/90">ByteLock Security</span>
           </p>
         </div>
       </div>
