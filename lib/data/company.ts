@@ -6,7 +6,7 @@ export const company = {
     "Kristone Global LLP is a premier natural stone exporter specializing in quartzite, marble, granite, onyx, and engineered stone for international projects.",
   email: "kristoneglobalmarble@gmail.com",
   phone: "9039051255, 8770076052",
-  whatsapp: "9039051255",
+  whatsapp: "8770076052",
   address: {
     line1: "Plot No. 1B/3B & 1B/4, Industrial Area No. 1, A.B. Road",
     line2: "Dewas (M.P.) — 455001",
