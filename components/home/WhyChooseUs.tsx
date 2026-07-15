@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function WhyChooseUs() {
   return (
-    <section className="section-padding bg-charcoal">
+    <section className="section-padding">
       <div className="container-wide">
         <SectionHeading
           eyebrow="Why Kristone Global"

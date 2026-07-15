@@ -27,7 +27,7 @@ export function SignatureCollectionCarousel() {
   const active = signatureCollectionSlides[activeIndex];
 
   return (
-    <section className="section-padding bg-charcoal">
+    <section className="section-padding">
       <div className="container-wide">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading

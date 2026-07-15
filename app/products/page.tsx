@@ -36,7 +36,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         imageAlt="Premium quartzite stone walls and flooring in luxury dining interior"
       />
 
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Artemis Series"

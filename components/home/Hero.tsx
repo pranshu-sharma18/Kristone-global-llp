@@ -36,7 +36,7 @@ const heroSlabs = [
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[#080808]">
+      <div className="absolute inset-0 bg-transparent">
         <div className="absolute inset-y-0 -left-[15%] flex w-[220%] -rotate-6 items-center opacity-90">
           <div className="flex min-w-max gap-6 animate-marquee-left">
             {[...heroSlabs, ...heroSlabs].map((slab, index) => (
@@ -80,9 +80,9 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/55 to-background/90" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/25 to-transparent" />
-      <div className="absolute inset-0 bg-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/25 via-background/40 to-background/75" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/45 via-background/15 to-transparent" />
+      <div className="absolute inset-0 bg-black/10" />
 
       <div className="relative z-10 container-wide px-6 pt-32 pb-20 md:px-10 lg:px-16">
         <div className="max-w-3xl">

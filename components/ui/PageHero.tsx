@@ -25,7 +25,7 @@ export function PageHero({
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/35 to-background/20" />
       <div className="relative z-10 section-padding container-wide w-full pb-16">
         {eyebrow && (
           <p className="text-xs uppercase tracking-[0.3em] text-gold">{eyebrow}</p>

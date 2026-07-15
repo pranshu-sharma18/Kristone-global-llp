@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function TrustSection() {
   return (
-    <section className="section-padding bg-charcoal-light">
+    <section className="section-padding">
       <div className="container-wide">
         <SectionHeading
           eyebrow="Quality Assurance"
