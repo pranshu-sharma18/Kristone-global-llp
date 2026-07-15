@@ -22,7 +22,7 @@ export function ProjectsContent() {
         imageAlt="Luxury hospitality interior featuring premium natural stone reception desk"
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end">
             <SectionHeading
@@ -101,11 +101,11 @@ export function ProjectsContent() {
                   </p>
 
                   <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                    <div className="border border-border px-5 py-4">
+                    <div className="border border-border bg-background px-5 py-4">
                       <p className="text-xs uppercase tracking-widest text-gold">Ideal For</p>
                       <p className="mt-2 text-sm text-muted">{project.category}</p>
                     </div>
-                    <div className="border border-border px-5 py-4">
+                    <div className="border border-border bg-background px-5 py-4">
                       <p className="text-xs uppercase tracking-widest text-gold">Project Value</p>
                       <p className="mt-2 text-sm text-muted">
                         Premium aesthetics, stronger presentation, and export-ready material appeal.
@@ -119,7 +119,7 @@ export function ProjectsContent() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center border border-gold/20 bg-charcoal-light p-10 md:p-14">
             <div>
@@ -141,7 +141,7 @@ export function ProjectsContent() {
         </div>
       </section>
 
-      <section className="section-padding pt-0">
+      <section className="section-padding bg-charcoal pt-0">
         <div className="container-wide text-center">
           <SectionHeading
             eyebrow="Why It Works"
@@ -164,7 +164,7 @@ export function ProjectsContent() {
                 text: "Better visuals and clearer use cases help architects, importers, and project buyers move from browsing to inquiry.",
               },
             ].map((item) => (
-              <div key={item.title} className="border border-border p-8 text-left">
+              <div key={item.title} className="border border-border bg-background p-8 text-left">
                 <h3 className="font-display text-xl text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.text}</p>
               </div>

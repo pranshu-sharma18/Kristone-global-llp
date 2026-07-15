@@ -28,7 +28,7 @@ export default function ContactPage() {
         imageAlt="Kristone Global LLP export sales office"
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <div className="grid gap-6 md:grid-cols-3">
             <ContactCard
@@ -56,14 +56,14 @@ export default function ContactPage() {
 
       <section id="inquiry" className="section-padding bg-charcoal">
         <div className="container-wide grid gap-16 lg:grid-cols-2">
-          <div>
+          <div className="rounded-sm border border-border/60 bg-background/90 p-8 backdrop-blur-sm md:p-10">
             <SectionHeading
               eyebrow="Buyer Inquiry"
               title="Request a Quote or Sample"
               description="Complete the form below and our export specialists will respond with availability, pricing, and shipping options."
             />
             <div className="mt-10 space-y-4">
-              <div className="border border-border p-6">
+              <div className="border border-border bg-background p-6">
                 <h3 className="text-xs uppercase tracking-widest text-gold">Office Address</h3>
                 <p className="mt-2 text-sm text-muted">
                   {company.address.line1}
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   {company.address.line2}
                 </p>
               </div>
-              <div className="border border-border p-6">
+              <div className="border border-border bg-background p-6">
                 <h3 className="text-xs uppercase tracking-widest text-gold">Download Brochure</h3>
                 <p className="mt-2 text-sm text-muted">
                   Complete product catalog with specifications and finish options.
@@ -125,7 +125,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Location"
@@ -190,7 +190,7 @@ function ContactCard({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="group border border-border p-8 transition-all hover:border-gold/40 hover:bg-charcoal-light"
+      className="group border border-border bg-background p-8 transition-all hover:border-gold/40 hover:bg-charcoal-light"
     >
       <div className="mb-4 flex h-12 w-12 items-center justify-center border border-gold/30 text-gold transition-colors group-hover:bg-gold group-hover:text-charcoal">
         <ContactIcon name={icon} />

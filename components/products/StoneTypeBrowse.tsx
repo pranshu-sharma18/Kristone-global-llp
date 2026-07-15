@@ -41,7 +41,7 @@ function CategoryBlock({
   const displayOrigin = showGallery && hasGallery ? active.origin : undefined;
 
   return (
-    <article className="border border-border bg-charcoal-light/30 transition-colors hover:border-gold/25">
+    <article className="border border-border bg-charcoal-light transition-colors hover:border-gold/25">
       <div className="grid lg:grid-cols-5">
         <div className="relative lg:col-span-2">
           <div className="relative aspect-[4/3] min-h-[280px] overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[420px]">
@@ -78,7 +78,7 @@ function CategoryBlock({
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div className="border border-border/60 bg-background/40 p-5">
+            <div className="border border-border/60 bg-background p-5">
               <p className="text-xs uppercase tracking-widest text-gold">Applications</p>
               <ul className="mt-3 space-y-2">
                 {cat.applications.map((app) => (
@@ -89,7 +89,7 @@ function CategoryBlock({
                 ))}
               </ul>
             </div>
-            <div className="border border-border/60 bg-background/40 p-5">
+            <div className="border border-border/60 bg-background p-5">
               <p className="text-xs uppercase tracking-widest text-gold">Finish Options</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {cat.finishes.map((finish) => (

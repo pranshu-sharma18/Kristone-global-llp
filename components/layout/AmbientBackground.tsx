@@ -21,17 +21,18 @@ function createLines(height: number, count: number): WaveLine[] {
   for (let i = 0; i < count; i++) {
     const t = i / Math.max(count - 1, 1);
     lines.push({
-      baseY: height * (0.04 + t * 0.92),
-      amp: 10 + Math.random() * 28,
-      amp2: 6 + Math.random() * 18,
-      freq: 0.0022 + Math.random() * 0.0045,
-      freq2: 0.001 + Math.random() * 0.0035,
-      speed: 0.35 + Math.random() * 0.85,
-      speed2: 0.2 + Math.random() * 0.6,
+      baseY: height * (0.06 + t * 0.88),
+      amp: 8 + Math.random() * 18,
+      amp2: 4 + Math.random() * 10,
+      freq: 0.002 + Math.random() * 0.0035,
+      freq2: 0.0009 + Math.random() * 0.0025,
+      speed: 0.22 + Math.random() * 0.45,
+      speed2: 0.12 + Math.random() * 0.35,
       phase: Math.random() * Math.PI * 2,
       phase2: Math.random() * Math.PI * 2,
-      alpha: 0.18 + Math.random() * 0.35,
-      width: 0.7 + Math.random() * 1.4,
+      // Keep lines soft so content stays primary
+      alpha: 0.05 + Math.random() * 0.08,
+      width: 0.5 + Math.random() * 0.7,
     });
   }
   return lines;
@@ -64,113 +65,77 @@ export function AmbientBackground() {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.round(Math.min(72, Math.max(36, height / 14)));
+      // Fewer lines = less visual noise behind copy
+      const count = Math.round(Math.min(28, Math.max(16, height / 36)));
       lines = createLines(height, count);
     };
 
-    const drawFrame = (staticMode: boolean) => {
-      // Deep charcoal base
-      ctx.fillStyle = "#0b0b0b";
+    const drawFrame = () => {
+      ctx.fillStyle = "#0c0c0c";
       ctx.fillRect(0, 0, width, height);
 
-      // Soft gold atmospheric blooms
       const g1 = ctx.createRadialGradient(
-        width * 0.18,
-        height * 0.12,
+        width * 0.2,
+        height * 0.15,
         0,
-        width * 0.18,
-        height * 0.12,
-        width * 0.55
+        width * 0.2,
+        height * 0.15,
+        width * 0.5
       );
-      g1.addColorStop(0, "rgba(201, 169, 98, 0.14)");
+      g1.addColorStop(0, "rgba(201, 169, 98, 0.06)");
       g1.addColorStop(1, "rgba(201, 169, 98, 0)");
       ctx.fillStyle = g1;
       ctx.fillRect(0, 0, width, height);
 
       const g2 = ctx.createRadialGradient(
-        width * 0.85,
-        height * 0.55,
+        width * 0.82,
+        height * 0.7,
         0,
-        width * 0.85,
-        height * 0.55,
-        width * 0.5
+        width * 0.82,
+        height * 0.7,
+        width * 0.45
       );
-      g2.addColorStop(0, "rgba(223, 200, 138, 0.08)");
+      g2.addColorStop(0, "rgba(223, 200, 138, 0.04)");
       g2.addColorStop(1, "rgba(223, 200, 138, 0)");
       ctx.fillStyle = g2;
       ctx.fillRect(0, 0, width, height);
 
-      const g3 = ctx.createRadialGradient(
-        width * 0.45,
-        height * 0.95,
-        0,
-        width * 0.45,
-        height * 0.95,
-        width * 0.45
-      );
-      g3.addColorStop(0, "rgba(201, 169, 98, 0.07)");
-      g3.addColorStop(1, "rgba(201, 169, 98, 0)");
-      ctx.fillStyle = g3;
-      ctx.fillRect(0, 0, width, height);
-
-      const step = width < 768 ? 8 : 5;
+      const step = width < 768 ? 10 : 7;
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        const warm = i % 3 === 0;
+        const warm = i % 4 === 0;
         ctx.beginPath();
         ctx.lineWidth = line.width;
         ctx.strokeStyle = warm
           ? `rgba(201, 169, 98, ${line.alpha})`
-          : `rgba(245, 240, 230, ${line.alpha * 0.85})`;
+          : `rgba(220, 215, 205, ${line.alpha * 0.7})`;
 
         for (let x = -20; x <= width + 20; x += step) {
           const y =
             line.baseY +
             Math.sin(x * line.freq + time * line.speed + line.phase) * line.amp +
-            Math.sin(x * line.freq2 - time * line.speed2 + line.phase2) * line.amp2 +
-            Math.sin(x * 0.0015 + time * 0.25 + i * 0.35) * (4 + (i % 5));
+            Math.sin(x * line.freq2 - time * line.speed2 + line.phase2) * line.amp2;
 
           if (x === -20) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
         ctx.stroke();
       }
-
-      // Extra chaotic cross-layer (thinner, faster feel)
-      if (!staticMode) {
-        for (let i = 0; i < lines.length; i += 3) {
-          const line = lines[i];
-          ctx.beginPath();
-          ctx.lineWidth = 0.5;
-          ctx.strokeStyle = `rgba(223, 200, 138, ${line.alpha * 0.45})`;
-          for (let x = -20; x <= width + 20; x += step + 2) {
-            const y =
-              line.baseY +
-              18 +
-              Math.sin(x * line.freq * 1.4 + time * line.speed * 1.35 + line.phase) *
-                (line.amp * 0.55) +
-              Math.cos(x * line.freq2 + time * 0.7 + line.phase2) * line.amp2 * 0.7;
-            if (x === -20) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        }
-      }
     };
 
     const tick = () => {
-      time += 0.016;
-      drawFrame(false);
+      time += 0.012;
+      drawFrame();
       raf = requestAnimationFrame(tick);
     };
 
     resize();
-    drawFrame(reduceMotion);
+    drawFrame();
 
     const onResize = () => {
       resize();
-      if (reduceMotion) drawFrame(true);
+      drawFrame();
     };
 
     window.addEventListener("resize", onResize);

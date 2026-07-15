@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function WhyChooseUs() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-charcoal">
       <div className="container-wide">
         <SectionHeading
           eyebrow="Why Kristone Global"
@@ -16,7 +16,7 @@ export function WhyChooseUs() {
           {whyChooseUs.map((item, i) => (
             <div
               key={item.title}
-              className="group border border-border p-8 transition-all duration-500 hover:border-gold/30 hover:bg-background/50"
+              className="group border border-border bg-background p-8 transition-all duration-500 hover:border-gold/30"
             >
               <span className="font-display text-4xl text-gold/30 transition-colors group-hover:text-gold/60">
                 {String(i + 1).padStart(2, "0")}

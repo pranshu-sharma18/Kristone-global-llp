@@ -36,7 +36,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         imageAlt="Premium quartzite stone walls and flooring in luxury dining interior"
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Artemis Series"
@@ -71,7 +71,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Categories"

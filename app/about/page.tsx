@@ -22,9 +22,9 @@ export default function AboutPage() {
         imageAlt="Natural stone quarry — Kristone Global LLP sourcing"
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide grid gap-16 lg:grid-cols-2 lg:gap-20">
-          <div>
+          <div className="rounded-sm border border-border/60 bg-background/90 p-8 backdrop-blur-sm md:p-10">
             <SectionHeading
               eyebrow="Our Story"
               title="Born from Stone. Driven by Global Ambition."
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Commitment to Quality"
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 text: "Slab-by-slab inspection with photographic documentation available on request.",
               },
             ].map((item) => (
-              <div key={item.title} className="border border-border p-8">
+              <div key={item.title} className="border border-border bg-background p-8">
                 <h3 className="font-display text-xl text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.text}</p>
               </div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
             </ul>
             <div className="grid gap-4 sm:grid-cols-2">
               {exportMarkets.map((m) => (
-                <div key={m.region} className="border border-border p-5">
+                <div key={m.region} className="border border-border bg-background p-5">
                   <h3 className="text-sm font-medium text-gold">{m.region}</h3>
                   <p className="mt-1 text-xs text-muted">{m.countries.join(", ")}</p>
                 </div>
@@ -181,7 +181,7 @@ export default function AboutPage() {
 
 function MissionCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="border border-border p-10">
+    <div className="border border-border bg-background p-10">
       <h2 className="font-display text-2xl text-gold">{title}</h2>
       <div className="divider-gold mt-4" />
       <p className="mt-6 leading-relaxed text-muted">{text}</p>

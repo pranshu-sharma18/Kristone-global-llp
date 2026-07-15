@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function CategoryHighlights() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-charcoal">
       <div className="container-wide">
         <SectionHeading
           eyebrow="Our Collections"

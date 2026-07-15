@@ -3,10 +3,10 @@ import { InquiryForm } from "@/components/ui/InquiryForm";
 
 export function HomeInquiry() {
   return (
-    <section id="inquiry" className="section-padding">
+    <section id="inquiry" className="section-padding bg-charcoal">
       <div className="container-wide">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <div>
+          <div className="rounded-sm border border-border/60 bg-background/90 p-8 backdrop-blur-sm md:p-10">
             <SectionHeading
               eyebrow="Get in Touch"
               title="Start Your Stone Inquiry"

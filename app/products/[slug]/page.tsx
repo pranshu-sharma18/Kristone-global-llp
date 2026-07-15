@@ -52,9 +52,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
       </section>
 
-      <section className="section-padding pt-0">
+      <section className="section-padding bg-charcoal pt-0">
         <div className="container-wide -mt-16 relative z-10">
-          <div className="max-w-3xl border border-border bg-background/95 p-8 backdrop-blur-sm md:p-12">
+          <div className="max-w-3xl border border-border bg-[#161616] p-8 md:p-12">
             {product.flagship && (
               <span className="text-xs uppercase tracking-[0.3em] text-gold">Flagship Collection</span>
             )}
@@ -78,7 +78,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <div className="max-w-3xl">
             <SectionHeading
@@ -189,7 +189,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide flex flex-col items-center gap-6 border border-gold/20 bg-charcoal-light p-10 text-center md:p-16">
           <h2 className="font-display text-3xl text-foreground">
             Ready to Specify {product.name}?

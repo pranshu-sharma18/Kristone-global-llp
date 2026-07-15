@@ -22,7 +22,7 @@ export default function QualityPage() {
         imageAlt="Stone processing and quality inspection at Kristone Global LLP"
       />
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <SectionHeading
             eyebrow="Our Process"
@@ -31,11 +31,11 @@ export default function QualityPage() {
             align="center"
           />
 
-          <div className="mt-16 space-y-0">
+          <div className="mt-16 space-y-0 rounded-sm border border-border bg-background/90 p-6 md:p-10">
             {processSteps.map((step, i) => (
               <div
                 key={step.step}
-                className={`grid items-center gap-8 border-b border-border py-10 md:grid-cols-12 ${
+                className={`grid items-center gap-8 border-b border-border py-10 last:border-b-0 md:grid-cols-12 ${
                   i % 2 === 1 ? "" : ""
                 }`}
               >
@@ -84,7 +84,7 @@ export default function QualityPage() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-charcoal">
         <div className="container-wide">
           <div className="border border-gold/20 bg-charcoal-light p-10 text-center md:p-16">
             <h2 className="font-display text-3xl text-foreground">

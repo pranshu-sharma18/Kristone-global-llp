@@ -80,7 +80,7 @@ export function InquiryForm({
     <form
       id={id}
       onSubmit={handleSubmit}
-      className={`space-y-5 ${compact ? "" : "rounded-sm border border-border bg-charcoal-light p-8 md:p-10"}`}
+      className={`space-y-5 ${compact ? "" : "rounded-sm border border-border bg-[#161616] p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.45)]"}`}
     >
       {!compact && (
         <h3 className="font-display text-2xl text-foreground">{title}</h3>
@@ -102,7 +102,7 @@ export function InquiryForm({
           rows={4}
           required
           placeholder="Tell us about your project requirements, quantities, and timeline..."
-          className="w-full resize-none border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-gold/50 focus:outline-none"
+          className="w-full resize-none border border-border bg-[#121212] px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-gold/50 focus:outline-none"
         />
       </div>
       {error && (
@@ -149,7 +149,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-gold/50 focus:outline-none"
+        className="w-full border border-border bg-[#121212] px-4 py-3 text-sm text-foreground placeholder:text-muted/60 focus:border-gold/50 focus:outline-none"
       />
     </div>
   );

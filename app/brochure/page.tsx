@@ -35,14 +35,14 @@ export default function BrochurePage() {
         </div>
       </section>
 
-      <section className="section-padding print:break-inside-avoid">
+      <section className="section-padding bg-charcoal print:break-inside-avoid">
         <div className="container-wide space-y-16">
           <div>
             <h2 className="font-display text-3xl text-gold">Artemis Quartzite Series</h2>
             <div className="divider-gold mt-3" />
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {flagship.map((p) => (
-                <div key={p.slug} className="border border-border p-6">
+                <div key={p.slug} className="border border-border bg-background p-6">
                   <h3 className="font-display text-xl">{p.name}</h3>
                   <p className="mt-2 text-sm text-muted">{p.tagline}</p>
                   <p className="mt-3 text-xs text-muted">
@@ -61,7 +61,7 @@ export default function BrochurePage() {
             <div className="divider-gold mt-3" />
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {categories.map((cat) => (
-                <div key={cat.id} className="border border-border p-5">
+                <div key={cat.id} className="border border-border bg-background p-5">
                   <h3 className="font-display text-lg">{cat.name}</h3>
                   <p className="mt-2 text-sm text-muted">{cat.description.slice(0, 120)}...</p>
                 </div>
@@ -69,7 +69,7 @@ export default function BrochurePage() {
             </div>
           </div>
 
-          <div className="border border-gold/20 p-8 text-center">
+          <div className="border border-gold/20 bg-charcoal-light p-8 text-center">
             <p className="font-display text-xl">{company.name}</p>
             <p className="mt-2 text-sm text-muted">{company.email} · {company.phone}</p>
           </div>

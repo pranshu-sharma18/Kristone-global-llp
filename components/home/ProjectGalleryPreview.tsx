@@ -13,7 +13,7 @@ export function ProjectGalleryPreview() {
   const images = applicationSlabs.map((slab) => ({ src: slab.image, alt: slab.alt }));
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-charcoal">
       <div className="container-wide">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading

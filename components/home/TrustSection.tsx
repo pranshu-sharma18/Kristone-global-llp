@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function TrustSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-charcoal-light">
       <div className="container-wide">
         <SectionHeading
           eyebrow="Quality Assurance"
@@ -16,7 +16,7 @@ export function TrustSection() {
           {trustPoints.map((point) => (
             <div
               key={point}
-              className="flex items-center gap-4 border border-border bg-background/50 px-6 py-5"
+              className="flex items-center gap-4 border border-border bg-background px-6 py-5"
             >
               <svg className="h-5 w-5 shrink-0 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

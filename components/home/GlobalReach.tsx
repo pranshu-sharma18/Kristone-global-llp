@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function GlobalReach() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-charcoal">
       <div className="container-wide">
         <div className="grid gap-16 lg:grid-cols-2">
           <SectionHeading
@@ -16,7 +16,7 @@ export function GlobalReach() {
             {exportMarkets.map((market) => (
               <div
                 key={market.region}
-                className="border border-border p-6 transition-colors hover:border-gold/30"
+                className="border border-border bg-background p-6 transition-colors hover:border-gold/30"
               >
                 <h3 className="font-display text-lg text-gold">{market.region}</h3>
                 <p className="mt-2 text-sm text-muted">{market.countries.join(" · ")}</p>

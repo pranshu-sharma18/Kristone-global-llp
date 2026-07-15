@@ -134,15 +134,15 @@ body {
 }
 
 .bg-charcoal {
-  background-color: rgba(15, 15, 15, 0.28) !important;
+  background-color: rgba(18, 18, 18, 0.88) !important;
 }
 
 .bg-charcoal-light {
-  background-color: rgba(26, 26, 26, 0.38) !important;
+  background-color: rgba(28, 28, 28, 0.92) !important;
 }
 
 .bg-background {
-  background-color: rgba(12, 12, 12, 0.55) !important;
+  background-color: rgba(15, 15, 15, 0.94) !important;
 }
 
 .container-wide {
@@ -151,7 +151,7 @@ body {
 
 .stone-texture {
   background-image:
-    linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.92)),
+    linear-gradient(rgba(15, 15, 15, 0.88), rgba(15, 15, 15, 0.94)),
     url("https://images.unsplash.com/photo-1615873966236-02aec638b129?w=1920&q=80");
   background-size: cover;
   background-position: center;
@@ -161,19 +161,21 @@ body {
   @apply h-px w-16 bg-gold;
 }
 
-/* Site-wide free-line wave canvas atmosphere */
+/* Soft ambient wave backdrop — content stays primary */
 .site-atmosphere {
-  background: #0b0b0b;
+  background: #0c0c0c;
 }
 
 .wave-canvas {
   display: block;
+  opacity: 0.55;
 }
 
 .atmosphere-veil {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(11, 11, 11, 0.2) 0%, transparent 22%, transparent 78%, rgba(11, 11, 11, 0.3) 100%);
+    radial-gradient(ellipse 75% 60% at 50% 40%, rgba(12, 12, 12, 0.45) 0%, rgba(12, 12, 12, 0.72) 100%),
+    linear-gradient(180deg, rgba(12, 12, 12, 0.55) 0%, rgba(12, 12, 12, 0.35) 35%, rgba(12, 12, 12, 0.4) 70%, rgba(12, 12, 12, 0.7) 100%);
   pointer-events: none;
 }

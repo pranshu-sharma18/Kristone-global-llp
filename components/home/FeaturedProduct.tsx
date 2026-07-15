@@ -9,7 +9,7 @@ export function FeaturedProduct() {
   const featuredImage = "/images/home-artemis-grey-featured.png";
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-charcoal">
       <div className="container-wide">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="relative aspect-[4/5] overflow-hidden">
@@ -25,7 +25,7 @@ export function FeaturedProduct() {
             </div>
           </div>
 
-          <div>
+          <div className="rounded-sm border border-border/60 bg-background/90 p-8 backdrop-blur-sm md:p-10">
             <span className="text-xs uppercase tracking-[0.25em] text-gold">
               Signature Collection
             </span>
