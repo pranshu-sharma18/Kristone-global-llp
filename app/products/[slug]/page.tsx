@@ -19,12 +19,15 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const product = getProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
 
+  // Dynamically generates the exact SEO title we planned (e.g., "Rossa Levanto Marble Slab | Kristone Global Exports")
+  const seoTitle = `${product.name} ${product.categoryLabel} Slab | Kristone Global Exports`;
+
   return {
-    title: product.name,
-    description: `${product.description.slice(0, 155)}... Request samples and export quotes from Kristone Global LLP.`,
+    title: seoTitle,
+    description: `Premium ${product.name} ${product.categoryLabel.toLowerCase()} slabs. ${product.tagline} Export-grade quality for luxury projects worldwide. Request a sample today.`,
     openGraph: {
-      title: product.name,
-      description: product.tagline,
+      title: seoTitle,
+      description: `Premium ${product.name} ${product.categoryLabel.toLowerCase()} slabs for global export.`,
       images: [{ url: product.heroImage }],
     },
   };

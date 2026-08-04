@@ -4,6 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { AmbientBackground } from "@/components/layout/AmbientBackground";
+import { AuthSessionProvider } from "@/components/auth/AuthSessionProvider";
+import { GoogleLoginPrompt } from "@/components/auth/GoogleLoginPrompt";
 import { company, seoKeywords } from "@/lib/data/company";
 import "./globals.css";
 
@@ -46,13 +48,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full scroll-smooth`}>
       <body className="relative min-h-full flex flex-col bg-transparent text-foreground antialiased">
-        <AmbientBackground />
-        <div className="relative z-10 flex min-h-full flex-1 flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <WhatsAppButton />
+        <AuthSessionProvider>
+          <AmbientBackground />
+          <div className="relative z-10 flex min-h-full flex-1 flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <WhatsAppButton />
+          <GoogleLoginPrompt />
+        </AuthSessionProvider>
       </body>
     </html>
   );

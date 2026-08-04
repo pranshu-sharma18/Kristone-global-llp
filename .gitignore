@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# visitor leads from Google login (contains emails)
+/data/google-visitors.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

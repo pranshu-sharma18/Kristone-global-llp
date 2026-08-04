@@ -10,9 +10,9 @@ import { ProjectGalleryPreview } from "@/components/home/ProjectGalleryPreview";
 import { TrustSection } from "@/components/home/TrustSection";
 import { HomeInquiry } from "@/components/home/HomeInquiry";
 export const metadata: Metadata = {
-  title: "Premium Natural Stone Exporter | Quartzite, Marble & Granite",
+  title: "Premium Marble & Quartzite Slab Exporter | Kristone Global",
   description:
-    "Kristone Global LLP exports premium natural stone including Artemis Grey Quartzite, marble, granite, and onyx to global buyers. Request a quote for export-quality stone slabs.",
+    "Kristone Global LLP exports premium marble & quartzite slabs — Valerian Breccia, Rossa Levanto & more — to architects worldwide. Request a quote.",
   alternates: { canonical: "/" },
 };
 

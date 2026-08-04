@@ -9,9 +9,9 @@ import { products, getFlagshipProducts } from "@/lib/data/products";
 import { StoneTypeBrowse } from "@/components/products/StoneTypeBrowse";
 
 export const metadata: Metadata = {
-  title: "Stone Collections — Quartzite, Marble, Granite & Onyx",
+  title: "Premium Marble, Quartzite & Breccia Collections | Kristone Global",
   description:
-    "Explore Kristone Global LLP premium stone collections including Artemis Quartzite, marble, granite, onyx, and engineered stone. Export-quality slabs for global projects.",
+    "Explore our export-grade natural stone collections. Kristone Global LLP offers premium marble, quartzite, and breccia slabs for luxury projects worldwide.",
 };
 
 interface ProductsPageProps {
@@ -31,7 +31,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       <PageHero
         eyebrow="Collections"
         title="Premium Stone Collections"
-        subtitle="Export-quality quartzite, marble, granite, onyx, and engineered stone for global specification."
+        subtitle="Export-quality marble, quartzite, and breccia slabs for global specification."
         image="/images/categories/quartzite-lifestyle-2.png"
         imageAlt="Premium quartzite stone walls and flooring in luxury dining interior"
       />

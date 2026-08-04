@@ -20,6 +20,16 @@ export function AboutPreview() {
               and project suppliers across five continents. Our signature Artemis
               quartzite collection represents the pinnacle of our export portfolio.
             </p>
+            
+            {/* --- NEW SEO BLOCK ADDED HERE --- */}
+            <div className="mt-6">
+              <h3 className="font-semibold text-foreground/90">A Complete Natural Stone Portfolio</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                We export three distinct categories of natural stone. Our <strong>marble</strong> collection, including Rossa Levanto, offers classic warmth. Our <strong>breccia</strong> range, led by Valerian Breccia, delivers dramatic patterning. Our <strong>quartzite</strong> collection combines exceptional hardness with sophisticated elegance.
+              </p>
+            </div>
+            {/* -------------------------------- */}
+
             <ul className="mt-8 space-y-3">
               {[
                 "Direct quarry sourcing partnerships",

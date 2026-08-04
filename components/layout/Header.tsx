@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { mainNav } from "@/lib/data/navigation";
 import { company } from "@/lib/data/company";
+import { AuthMenu } from "@/components/auth/AuthMenu";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,6 +46,7 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
+            <AuthMenu />
             <Link
               href="/contact"
               className="border border-gold/60 px-5 py-2.5 text-xs uppercase tracking-widest text-gold transition-all hover:bg-gold hover:text-charcoal"
@@ -102,6 +104,9 @@ export function Header() {
           >
             Request Quote
           </Link>
+          <div className="mt-6" onClick={() => setMenuOpen(false)}>
+            <AuthMenu mobile />
+          </div>
         </nav>
         <div className="border-t border-border bg-[#0f0f0f] p-6 text-center text-sm text-muted">
           {company.email}

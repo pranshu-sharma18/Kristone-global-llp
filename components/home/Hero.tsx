@@ -90,8 +90,8 @@ export function Hero() {
             {company.name}
           </p>
           <h1 className="animate-fade-up animate-delay-100 mt-4 font-display text-4xl leading-tight text-foreground md:text-6xl lg:text-7xl">
-            Premium Natural Stone for{" "}
-            <span className="gold-gradient-text">Global Projects</span>
+            Premium Marble & Quartzite Slabs,{" "}
+            <span className="gold-gradient-text">Exported Worldwide</span>
           </h1>
           <p className="animate-fade-up animate-delay-200 mt-6 max-w-xl text-lg leading-relaxed text-stone-beige/90 md:text-xl">
             {company.subtitle} Exporting excellence in quartzite and natural
