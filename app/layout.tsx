@@ -28,6 +28,13 @@ export const metadata: Metadata = {
   description:
     "Kristone Global LLP — premium natural stone exporter specializing in quartzite, marble, granite, onyx, and engineered stone. Export-quality slabs for global luxury projects.",
   keywords: [...seoKeywords],
+  
+  // --- ADD THIS VERIFICATION BLOCK ---
+  verification: {
+    google: "BrTgcL3vV-z9DY1ZwS-WKCWOu58MLimuHFpjdHCuhIU",
+  },
+  // -----------------------------------
+
   openGraph: {
     title: `${company.name} | Premium Natural Stone Exporter`,
     description: company.description,
